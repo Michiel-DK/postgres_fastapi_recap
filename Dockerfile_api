@@ -1,2 +1,14 @@
-FROM python:3.8.12-slim
+FROM python:3.8.12-buster
 
+COPY fast /fast
+COPY requirements.txt requirements.txt
+
+RUN pip install --upgrade pip
+RUN apt update -y && apt install -y build-essential libpq-dev \
+&& pip install psycopg2-binary --no-binary psycopg2-binary \
+&& pip install --upgrade pip \
+&& pip install -r requirements.txt
+
+EXPOSE 8000
+
+CMD uvicorn fast.api:app --host 0.0.0.0 --port 8000
