@@ -3,10 +3,10 @@ version: '3.10'
 services:
 
   db:
-      container_name: postgres_airbnb_db
+      container_name: airbnb_postgres_c
       build:
         dockerfile: Dockerfile_postgres
-      image: postgres:alpine
+      image: airbnb_postgres
       restart: always
       env_file:
         - .env
@@ -17,10 +17,11 @@ services:
         - pg_data:/var/lib/postgresql/data/
 
   api:
-    container_name: api_airbnb
+    container_name: airbnb_api_c
     build: 
       context: .
       dockerfile: Dockerfile_api
+    image: airbnb_api
     volumes:
       - .:/api
     env_file:

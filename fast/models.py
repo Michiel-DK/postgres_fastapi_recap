@@ -3,7 +3,7 @@ from sqlalchemy import Boolean, Column, Integer, String, Float
 from .database import Base
 
 class Airbnb(Base):
-    __tablename__ = "airbnb"
+    __tablename__ = "cities"
 
     id = Column(Integer, primary_key=True, index=True)
     city = Column(String, primary_key=False, index=False)
