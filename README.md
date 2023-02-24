@@ -11,4 +11,4 @@ CREATE TABLE cities (
   bedrooms INT,
   satisfaction REAL
 );
-\copy cities FROM 'tmp/merged.csv' DELIMITER ',' CSV HEADER;
+\copy cities FROM 'merged.csv' DELIMITER ',' CSV HEADER;
