@@ -1,0 +1,15 @@
+import os
+
+
+POSTGRES_USER=os.getenv('POSTGRES_USER')
+POSTGRES_PASSWORD=os.getenv('POSTGRES_PASSWORD')
+POSTGRES_CONTAINER=os.getenv('POSTGRES_CONTAINER')
+POSTGRES_HOST_PORT=os.getenv('POSTGRES_HOST_PORT')
+
+if os.getenv('CONTEXT')=='local':
+    HOST = 'localhost'
+else:
+    HOST = 'db'
+    
+
+POSTGRES_URI=f"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{HOST}:{POSTGRES_HOST_PORT}/{POSTGRES_CONTAINER}"
