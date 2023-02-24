@@ -2,8 +2,9 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 import os
 import pandas as pd
+from fast.params import *
 
-engine = create_engine(os.getenv('POSTGRES_LINK'))
+engine = create_engine(POSTGRES_URI)
 
 Session = sessionmaker(bind=engine)
 
