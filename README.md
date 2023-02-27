@@ -2,7 +2,13 @@
 
 ## Set-up
 
-Clone the repo and run below to export env variables
+Go to the root of your coding folder and clone the repo:
+
+```bash
+git clone git@github.com:Michiel-DK/postgres_fastapi_recap.git
+```
+
+Then run below to export env variables:
 
 ```bash
 direnv allow .
@@ -58,5 +64,13 @@ This will allow us to persist the database through different instantiations of t
 
 ## Inspect the API
 
-You can then test the api on *http://localhost:8000/* and have a look at the code to see how everything is structured.
+You can then test the api on *http://localhost:8000/docs* and have a look at the different fastapi related .py files.
+
+Essentially:
+- **database.py** connects the api to the database
+- **models.py** structures the databse content in a Python class
+- **crud.py** defines an operation on the database - here extract all from database based on variable city
+- **schemas.py** allows you to create different response models based on the models
+- **api.py** defines the endpoints of the api
+
 
