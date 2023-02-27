@@ -4,16 +4,18 @@ from pydantic import BaseModel
 class AirbnbBase(BaseModel):
     
     '''
-    Shemas are used to validate data we receive as well as to reformat the data that we want to send to the client.
+    Shemas are used to:
+    - validate data we receive as well
+    - reformat the data that we want to send to the client
     
-    We're inheriting the BaseModel from pydantic. It empowers fastapi to suggest validation errors to users.
+    We're inheriting the BaseModel from pydantic to suggest validation errors to users.
     
     '''
     
     #needs to be returned
     id: int
     
-    #optional to potentially return nan
+    #optional to return
     city: Optional[str] = None
     room_price: Optional[float] = None
     host_is_superhost: Optional[bool] = None
