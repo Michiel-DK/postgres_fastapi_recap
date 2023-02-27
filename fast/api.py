@@ -21,12 +21,22 @@ def root():
     return "{'greeting': 'hi'}"
 
 
-@app.get("/airbnb/{city}", response_model=List[schemas.Airbnb])
+@app.get("/airbnb_pricing/{city}", response_model=List[schemas.AirbnbPricing])
 def read_items(city: str, db: Session = Depends(get_db)):
     """ 
     Get request which:
     - takes in city as an argument
-    - responds with the airbnb schema as a list for all rows
+    - responds with the airbnb PRICING schema as a list for all rows
+    """
+    items = crud.get_all_airbnb(db, city=city)
+    return items
+
+@app.get("/airbnb_other/{city}", response_model=List[schemas.AirbnbOther])
+def read_items(city: str, db: Session = Depends(get_db)):
+    """ 
+    Get request which:
+    - takes in city as an argument
+    - responds with the airbnb OTHER schema as a list for all rows
     """
     items = crud.get_all_airbnb(db, city=city)
     return items

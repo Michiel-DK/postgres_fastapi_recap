@@ -1,6 +1,9 @@
 from sqlalchemy import Boolean, Column, Integer, String, Float
 
-from .database import Base
+from sqlalchemy.ext.declarative import declarative_base
+
+#returns a class to create Base class => from this class to create each of the database models or classes
+Base = declarative_base()
 
 class Airbnb(Base):
     
@@ -8,6 +11,8 @@ class Airbnb(Base):
     In this context a data-model is pythonic representation of a database table.
     
     We are inheriting from the Base class to have a class-based representation of tables. Each property or attribute of this class is translated into a column in the table
+    
+    Shoul be only per database table -> you can change the output in the schemas
     
     """
     

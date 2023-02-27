@@ -9,6 +9,7 @@ services:
         # seperate docker file for postgres
         dockerfile: Dockerfile_postgres
       image: airbnb_postgres
+      # always restart when docker compose up
       restart: always
       env_file:
         - .env
@@ -31,9 +32,11 @@ services:
         - .env
     ports:
       - "8000:8000"
+    #api depends on database so will wait to on postgres before starting
     depends_on:
       - db
     restart: on-failure
 
+#saves our data between instantiations of containers
 volumes:
   pg_data:

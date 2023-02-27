@@ -8,5 +8,7 @@ def get_all_airbnb(db: Session, city:str):
     - queries the Airbnb data model
     - filters on a user-provided city
     - then returns all observations in database 
+    
+    Can be reusable across request because it filters the models
     """
     return db.query(models.Airbnb).filter(models.Airbnb.city == city).all()
