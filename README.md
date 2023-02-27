@@ -1,5 +1,14 @@
 # Docker-compose FastAPI + POSTGRES recap
 
+## Set-up
+
+Run below to export env variables
+
+```bash
+direnv allow .
+direnv reload
+```
+
 ## Get the data
 
 This example dataset consists of multiple .csv files containig airbnb data in multiple cities.

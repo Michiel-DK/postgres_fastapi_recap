@@ -23,6 +23,7 @@ class AirbnbBase(BaseModel):
     satisfaction: Optional[float] = None
     
 class Airbnb(AirbnbBase):
+    #id and city necessary to return
     id: int
     city:str
 
