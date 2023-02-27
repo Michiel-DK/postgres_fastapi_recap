@@ -2,7 +2,7 @@
 
 ## Set-up
 
-Run below to export env variables
+Clone the repo and run below to export env variables
 
 ```bash
 direnv allow .
@@ -58,5 +58,5 @@ This will allow us to persist the database through different instantiations of t
 
 ## Inspect the API
 
-You can then check the api on *http://localhost:8000/* and see how both endpoints are structured.
+You can then test the api on *http://localhost:8000/* and have a look at the code to see how everything is structured.
 

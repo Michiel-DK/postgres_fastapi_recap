@@ -1,7 +1,7 @@
 from typing import Optional
 from pydantic import BaseModel
 
-class AirbnbBasePricing(BaseModel):
+class AirbnbPricing(BaseModel):
     
     '''
     Shemas are used to:
@@ -17,22 +17,16 @@ class AirbnbBasePricing(BaseModel):
     
     #needs to be returned
     id: int
+    city: str
     
     #optional to return
-    city: Optional[str] = None
     room_price: Optional[float] = None
     
-class AirbnbPricing(AirbnbBasePricing):
-    #id and city necessary to return
-    id: int
-    city:str
-
     class Config:
         #orm_mode will tell the Pydantic model to read the data even if it is not a dict, but an ORM model
         orm_mode = True
-        
-        
-class AirbnbBaseOther(BaseModel):
+    
+class AirbnbOther(BaseModel):
     
     '''
     Shemas are used to:
@@ -48,19 +42,15 @@ class AirbnbBaseOther(BaseModel):
     
     #needs to be returned
     id: int
+    city: str
     
     #optional to return
-    city: Optional[str] = None
     host_is_superhost: Optional[bool] = None
     bedrooms : Optional[int] = None
     satisfaction: Optional[float] = None
     
-class AirbnbOther(AirbnbBaseOther):
-    #id and city necessary to return
-    id: int
-    city:str
-
     class Config:
         #orm_mode will tell the Pydantic model to read the data even if it is not a dict, but an ORM model
         orm_mode = True
+
         

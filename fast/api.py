@@ -25,7 +25,7 @@ def root():
 def read_items(city: str, db: Session = Depends(get_db)):
     """ 
     Get request which:
-    - takes in city as an argument
+    - takes in city as an argument -> options: amsterdam, athens, barcelona, berlin, budapest, lisbon, london, paris, rome, vienna
     - responds with the airbnb PRICING schema as a list for all rows
     """
     items = crud.get_all_airbnb(db, city=city)
@@ -35,7 +35,7 @@ def read_items(city: str, db: Session = Depends(get_db)):
 def read_items(city: str, db: Session = Depends(get_db)):
     """ 
     Get request which:
-    - takes in city as an argument
+    - takes in city as an argument -> options: amsterdam, athens, barcelona, berlin, budapest, lisbon, london, paris, rome, vienna
     - responds with the airbnb OTHER schema as a list for all rows
     """
     items = crud.get_all_airbnb(db, city=city)
